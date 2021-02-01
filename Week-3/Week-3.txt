@@ -1,0 +1,82 @@
+1.
+A=str(input())
+B=str(input())
+if len(A)==len(B):
+    flag=0
+    for i in range (len(A)):
+        if A[i]>B[i]:
+            flag=1
+    if flag==1:
+        print('NO')
+    elif flag==0:
+        print('YES')
+else:
+    print('NO')
+3.
+Q=int(input())
+for i in range (0,Q):
+    S=input()
+    T=input()
+    shift=ord(S[0])-ord(T[0])
+    flag=0
+    for i in range (0,len(S)):
+        if (shift%26)==((ord(S[i])-ord(T[i]))%26):
+            flag=1
+        else:
+            flag=0
+            break
+    if flag:
+        print((-shift+26)%26)
+    else:
+        print(-1) 
+4.
+t=int(input())
+while t!=0:
+       n=int(input())
+       s=input()
+       a=s[n-1]
+       a=a*n
+       print(a)
+5.
+n,m=map(int,input().split())
+l=[]
+for i in range(n):
+    l.append(input())
+freq=[]
+for i in range(m):
+    a=0
+    b=0
+    c=0
+    d=0
+    e=0
+    for j in range(n):
+        if l[j][i]=="A":
+            a=a+1
+        elif l[j][i]=="B":
+            b=b+1
+        elif l[j][i]=="C":
+            c=c+1
+        elif l[j][i]=="D":
+            d=d+1
+        elif l[j][i]=="E":
+            e=e+1
+    freq.append(max(a,b,c,d,e))
+num=input().split()
+sum=0
+for i in range(m):
+    sum=sum+int(num[i])*(freq[i])
+print(sum)
+6.
+while True:
+    try:
+        l=int(input())
+        x=input()
+        s=input()
+        if x in s:
+            for i in range(len(s)-l+1):
+                if s[i:i+l]==x:
+                    print(i)
+        else:
+            print()
+    except:
+        break 
